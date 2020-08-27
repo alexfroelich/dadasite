@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    background-color: seashell;
+    background-color: white;
     scroll-behavior: smooth;
    
 }
@@ -14,7 +14,15 @@ body{
     padding: 0; 
 }
 
-
+.logoNav{
+   float: right;
+   width: 50%;
+   display: none;
+}  
+#nav-logo-img{
+    width: 100%;
+    height: 30%;
+}
 
 #logo{
     text-align: center;
@@ -24,9 +32,6 @@ body{
    
 }
 
-.logoNav{
-    display: none;
-}  
 
 nav{
    
@@ -56,6 +61,10 @@ nav{
     -webkit-box-shadow: 0 8px 6px -6px #b9b9b9;
     -moz-box-shadow: 0 8px 6px -6px #b9b9b9;
     box-shadow: 0 8px 6px -6px #747474;
+}
+
+.mobile-only{
+    display: none;
 }
 #logo-img{
     max-width: 100%;
@@ -226,11 +235,11 @@ a{
 .text-section-contact{
     padding-left: 20%;
     grid-area: text-section-contact;
-    
+   
 }
 .contact-content{
-   padding-left: 10%;
-
+    padding-left: 10%;
+    
     justify-content: center;
     align-items: center;
     margin-top:15%;
@@ -239,7 +248,8 @@ a{
 iframe{
     background-color: seagreen;
     margin: auto;
-    
+   margin-top: 15%;
+   
     float: right;
 }
 .map-section{
@@ -360,7 +370,7 @@ textarea:focus{
         "text-section-services ";
         
         column-gap: 10%; 
-        background-color: seashell;
+        
         margin-top: 0%;
         
     }
@@ -375,7 +385,7 @@ textarea:focus{
         grid-area: text-section-services;
         margin: 10%;
         text-justify: distribute;
-        background-color: seashell;
+       
      }
   
      .photo-services {
@@ -412,13 +422,7 @@ textarea:focus{
    #approach-quote{
     margin: 10%;
    }
-    #form{
-        display: none;
-    }
     
-    .card-contact{
-        display:none;
-    }
     #logo-img{
         width: 100%;
         height: auto;
@@ -444,6 +448,49 @@ textarea:focus{
    
     .menu-item{
         margin: 1%;
+    }
+
+    .card-contact{
+  
+        display: grid;  
+        grid-template-areas:
+        "text-section-contact"
+        "map-section";
+        column-gap: 0%; 
+        margin-top: 10%;
+    }
+    .text-section-contact{
+        padding-left: 10%;
+        grid-area: text-section-contact;
+       
+    }
+    .contact-content{
+        padding-left: 10%;
+        grid-area: contact-text;
+        justify-content: center;
+        align-items: center;
+        margin-top:15%;
+    
+    }
+
+    
+    iframe{
+        background-color: seagreen;
+        margin: auto;
+       margin-top: 15%;
+       
+        float: right;
+    }
+    .map-section{
+        grid-area: map-section;
+    }
+    
+    #map{
+        width: 100%;
+        height: auto;
+       
+      
+      
     }
     .mobile-shadow{
         -webkit-box-shadow: 0 8px 6px -6px #b9b9b9;
@@ -506,6 +553,9 @@ nav{
       display: none;
     
   }
+  .mobile-only{
+    display: block;
+}
 
   
   body{

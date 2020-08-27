@@ -69,12 +69,14 @@ screenWidth = window.screen.width;
 window.onscroll = function(ev) {
   
   const nav = document.querySelector('#nav-manager');
-  if(screenWidth < 1000 && window.scrollY > 500){
-    
-    nav.style.display = "block";
+  if(screenWidth < 1000){
+    if(window.scrollY < 500)
+      nav.style.display = "none";
+    else
+      nav.style.display = "block";
   }
   else{
-    nav.style.display = "none";
+    nav.style.display = "block";
   }
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // you're at the bottom of the page
