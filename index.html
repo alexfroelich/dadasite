@@ -30,7 +30,7 @@
         <div class="empty-space desktop-only"></div>
         <hr class="nav-line desktop-only">
         <div class="logoNav" id="sticky-header">
-            <img id="nav-logo-img2" src="./assets/logo.png" alt="alessandra_froelich">
+            <img id="nav-logo-img" src="./assets/logo.png" alt="alessandra_froelich">
         </div>
         <ul id="header-menu" class="nav-links">
             <a onclick="scrollToAbout()"> <li class="menu-item" id="menu-about"> À propos de moi</li></a>
@@ -60,6 +60,7 @@
             <div class="text-section">
                
                 <h1 class="translate title" id="about-title">À propos de moi</h1>
+                <hr class="mobile-only">
                 <p class="translate" id="about-text-1">J'ai obtenu mon Diplôme de psychologue au Brésil en 2003.
                     Dans mon pays d'origine, j'ai travaillé auprès d'une clientèle de tous âges,
                     de façon individuelle et en groupe, dans des environnements variés 
@@ -84,6 +85,7 @@
                     J'ai ainsi appris à adapter ma pratique selon le contexte social et culturel dans lequel les personnes évoluent. 
                     Étant une passionnée des langues et des cultures, j'offre des services en français, anglais, espagnol et portugais.
                 </p>
+                <hr class="mobile-only">
             </div>
 
            
@@ -93,10 +95,14 @@
         <section id="approach">
             <div id="approach-grid-item-1">
                 <h1 class="translate title" id="approach-title">Mon approche</h1>
+                <hr class="mobile-only">    
             </div>
+            
            <div id="approach-grid-item-2">
                 <p class="translate" id="approach-quote">"Connaître toutes les théories, dominer toutes les techniques mais, en touchant une âme humaine, être à peine une autre âme humaine" (C.G. Jung)</p>
-           </div>
+                <hr class="mobile-only">
+            </div>
+           
             <div class="text-section" id="approach-grid-item-3">
                
               
@@ -145,12 +151,16 @@
                     J'offre également des rencontres virtuelles par vidéoconférence. 
                     Vous pouvez ainsi participer à la séance à l’endroit de votre choix, à l’aide d’une plateforme sécurisée.</p>
             </div>
+            <div class="image-section-services2 mobile-only">
+                <img class="photo-services2" src="./assets/ale11.jpg" alt="alessandra">
+            </div>
         </section>
         
         <!-- Contact -->
         <section id="contact" class="card-contact">
             <div class="text-section-contact">
                 <h1 class="translate title">Contact</h1>
+                <hr class="mobile-only">
                 <div class="contact-content">
                     <p>(819)571-9988</p>
                     <p>psyalessandra@gmail.com</p>
@@ -163,7 +173,7 @@
              <!-- Map -->
             <div id="map" class="map-section">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.1072638615897!2d-71.96468832650385!3d45.38700702024337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7b4b437637523%3A0xd79cd6d52ee16f06!2s4170%20Rue%20Bonaventure%2C%20Sherbrooke%2C%20QC%20J1L%201Y6%2C%20Canada!5e0!3m2!1sen!2sbr!4v1587653554571!5m2!1sen!2sbr"
-                 width="500" height="300" frameborder="0" style="border:0;" 
+                 width="100%" height="350" frameborder="0" style="border:0;" 
                  allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
@@ -174,6 +184,7 @@
             <!-- <form class="contact-form" name="contactForm" onsubmit="return validateForm()" action="contactform.php" method="post" autocomplete="off" autocomplete="off">
                 -->
                 <form name="contactForm" class="contact-form" onsubmit="return validateForm()" method="post" autocomplete="off" autocomplete="off">
+                    
                     <input id="input-name" type="text" name="name" placeholder="Name" aria-autocomplete="none" autocomplete="off" >
                     <input id="input-email" type="email" name="email" placeholder="E-mail" aria-autocomplete="none" autocomplete="off" >
                     <input id="input-subject" type="text" name="subject" placeholder="Subject" >

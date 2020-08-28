@@ -279,12 +279,22 @@ iframe{
 }
 input{
     box-sizing: border-box;
+    letter-spacing: 1px;
     padding: 12px 20px;
     margin: 10px;
     font-size: medium;
-
+    border: 0;
+    border-bottom: 2px solid skyblue;
+    color: rgb(54, 52, 52);
 }
-
+input:focus{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: medium;
+    border: 0;
+    border-bottom: 2px solid skyblue;
+}
 textarea{
     box-sizing: border-box;
     padding: 12px 20px;
@@ -292,27 +302,31 @@ textarea{
     font-size: medium;
     outline: none;
     line-height: 25px;
+    border: 2px solid skyblue;
+    border-radius: 2px;
 }
 textarea:focus{
-    border-color: black;
+    /* border-color: black; */
 }
 #submit-button{
     width: 100%;
-  background-color: #ffff;
-  color: black;
+ 
+  /* color: black; */
   height: 50px;
   padding: 14px 20px;
   margin: 8px 0;
   outline: none;
   border-radius: 2px;
-
+  background-color: #7cc0dd;
+  color: white;
+  border-color: transparent;
   cursor: pointer;
    transition: ease-in;
    transition-duration: 0.2s;
 }
 #submit-button:hover{
-    background-color: #7cc0dd;
-    color: white;
+    background-color: white;
+    color: 7cc0dd;
 }
 
 #submit:focus{
@@ -367,9 +381,10 @@ textarea:focus{
         display: grid;  
         grid-template-areas:
         "image-section-services "
-        "text-section-services ";
+        "text-section-services "
+        "image-section-services2";
         
-        column-gap: 10%; 
+        column-gap: 0%; 
         
         margin-top: 0%;
         
@@ -389,14 +404,21 @@ textarea:focus{
      }
   
      .photo-services {
-        max-width: 125%;
+        max-width: 100%;
         height: auto;
         margin-top: 0%;
        
         /* animation-name: fadeIn;
         animation-duration: 4s; */
       }
-
+      .photo-services2 {
+        max-width: 100%;
+        height: auto;
+        margin-top: 0%;
+       
+        /* animation-name: fadeIn;
+        animation-duration: 4s; */
+      }
 
       #approach{
     
@@ -421,7 +443,9 @@ textarea:focus{
    }
    #approach-quote{
     margin: 10%;
+    font-size: 1.75em;
    }
+  
     
     #logo-img{
         width: 100%;
@@ -457,18 +481,19 @@ textarea:focus{
         "text-section-contact"
         "map-section";
         column-gap: 0%; 
-        margin-top: 10%;
+        margin-top: 0%;
     }
     .text-section-contact{
-        padding-left: 10%;
+        margin: 10%;
+        padding-left: 0%;
         grid-area: text-section-contact;
        
     }
     .contact-content{
-        padding-left: 10%;
+        padding-left: 0%;
         grid-area: contact-text;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
         margin-top:15%;
     
     }
@@ -477,12 +502,13 @@ textarea:focus{
     iframe{
         background-color: seagreen;
         margin: auto;
-       margin-top: 15%;
+        margin-top: 0%;
        
-        float: right;
+       
     }
     .map-section{
         grid-area: map-section;
+        
     }
     
     #map{
@@ -565,7 +591,11 @@ nav{
     }
     img{margin: 0% !important; }
 }
+hr{
 
+    margin: auto;
+    width: 80vw;
+}
 /*Animations*/
 @keyframes fadeIn{
     from{
