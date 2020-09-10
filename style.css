@@ -50,6 +50,9 @@ nav{
 .burger{
     display: none;
 }
+.nav-title{
+    display: none;
+}
 .burger div{
     width: 25px;
     height: 2px;
@@ -829,7 +832,9 @@ nav{
     background-color: black;
     margin: 5px;
 }
+
 .nav-title{
+    display: inline;
     flex-grow: 2;
    justify-content: center;
    text-anchor: middle;
