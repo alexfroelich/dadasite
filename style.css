@@ -36,17 +36,30 @@ body{
 nav{
    
     text-align: center;
-    position: sticky;
-    margin-bottom: 5%;
-    top: 0px;
-    opacity: 0.98; 
+    /* position:-webkit-sticky; */
+     position:sticky;
+      top:0;
+    /* margin-bottom: 5%; */
+    /* top: -1px; */
+   
     padding: 10px;
     min-height: 7vh;
     animation-name: fadeIn;
     animation-duration: 1s;
-    
+    width: 100%;
 }
-
+.fixed{
+    padding: 10px;
+    top: 0px;
+    position: fixed;
+    transition: 1s;
+}
+.sticky{
+    padding: 10px;
+    top: 0px;
+    position: sticky;
+    transition: 1s;
+}
 .burger{
     display: none;
 }
@@ -65,8 +78,12 @@ nav{
     -webkit-box-shadow: 0 8px 6px -6px #b9b9b9;
     -moz-box-shadow: 0 8px 6px -6px #b9b9b9;
     box-shadow: 0 8px 6px -6px #747474;
+    transition: 0.5s;
 }
-
+#nav-manager{
+    transition: 0.5s;
+    
+}
 .mobile-only{
     display: none;
 }
@@ -86,6 +103,8 @@ nav{
     padding-top: 10px;
     width: 100%;
     margin: auto;
+    margin-top: 1%;
+   
 }
 a{
     text-decoration: none;
@@ -100,17 +119,24 @@ a{
     align-items: center; 
     color:#01425e;
     background-color:#01425e ; 
+    
 }
 
 .menu-item{
+   
     color:#01425e;
     display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: ease-in 0.4s;
 }
 
 .menu-item:hover{
-    color: white;
-    background-color: #01425e;
-    transition: ease-in 0.5s;
+    border-bottom: 2px solid #7cc0dd;
+    transition: ease-in 0.4s;
+}
+.underline{
+    border-bottom: 2px solid #7cc0dd;
+    transition: ease-in 0.4s;
 }
 .title{
     font-family: 'Libre Baskerville';
@@ -829,12 +855,28 @@ nav{
 .burger div{
     width: 25px;
     height: 2px;
-    background-color: black;
+    background-color: #333333;
     margin: 5px;
     outline: none;
     border-style: none;
+    transition: 0.5s;
 }
-
+.rotation1{
+    transition: 0.5s;
+    transform: rotate(-45deg) translate(-5px, 5px);
+    color: #333333 !important;
+   
+}
+.rotation2{
+    transition: 0.5s;
+    transform: rotate(45deg);
+    color: #333333 !important;
+   
+}
+.rotation3{
+    transition: 0.5s;
+    opacity: 0;
+}
 .nav-title{
     display: inline;
     flex-grow: 2;
@@ -861,11 +903,7 @@ nav{
 
 
 
-  .shadow{
-    -webkit-box-shadow: 0 0px 6px -6px #f30000;
-    -moz-box-shadow: 0 8px 6px -6px #ff0707;
-    box-shadow: 0 0px 6px -6px #ffffff;
-  }
+ 
 
   .desktop-only{
       display: none;

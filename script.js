@@ -9,13 +9,22 @@ var isMobile = false;
 
 var stickyHeader = document.getElementById("sticky-header");
 var logo = document.getElementById("logo");
-
+//Burger lines
+var line1 = document.getElementById("line1");
+var line2 = document.getElementById("line2");
+var line3 = document.getElementById("line3");
+//Menu Sections
+var menuAbout = document.getElementById("menu-about");
+var menuApproach = document.getElementById("menu-approach");
+var menuServices = document.getElementById("menu-services");
+var menuContact = document.getElementById("menu-contact");
+//Sections
 var about = document.getElementById("about-title");
 var approach = document.getElementById("approach-title");
 var services = document.getElementById("services-title")
 var contact = document.getElementById("contact-title");
 var header = document.getElementById("sticky-header");
-
+var navEmptySpace = document.querySelector(".empty-space")
 var titleFadeOffset = 200;
 var actualSection = section.NONE;
 //Languages Available
@@ -69,7 +78,9 @@ function dismiss(){
 function toggleNavMenu(){
   //Toggle Nav
   nav.classList.toggle('nav-active');
-
+  line1.classList.toggle('rotation1');
+  line2.classList.toggle('rotation2');
+  line3.classList.toggle('rotation3');
   //Animate Links
   showNavElements();
 }
@@ -80,11 +91,11 @@ function showNavElements(){
     //if it is already animated
     if(link.style.animation){
       link.style.animation = '';
-      transparent(false)
+      transparent()
     }
     else{
      
-      transparent(true)
+      navTitle.classList.add('nav-title-transparent')
       link.style.animation = `fadeIn 0.5s ease-in-out forwards ${index / 25 + 0.25}s`;
     }
   });
@@ -94,7 +105,7 @@ const navSlide = () => {
   burger.addEventListener('click', () => {
     //Toggle Nav
     toggleNavMenu()
-   
+    
   });
 
   
@@ -110,13 +121,25 @@ window.onscroll = function(ev) {
   var yPosition = window.scrollY
   adjustNavTitle(yPosition);
   if(screenWidth < 1000){
-    if(yPosition < 500)
+    if(yPosition < about.offsetTop + GetNavMenuHeight())
     navMenu.style.display = "none";
     else
     navMenu.style.display = "block";
   }
   else{
     navMenu.style.display = "block";
+    //console.log("Nav" + navEmptySpace.offsetTop)
+   
+    if(yPosition >= navEmptySpace.offsetTop + window.screen.height ){
+       navMenu.classList.add("shadow");
+      // navMenu.classList.add("fixed");
+      // navMenu.classList.remove("sticky");
+    }
+    else{
+       navMenu.classList.remove("shadow");
+      // navMenu.classList.remove("fixed");
+      // navMenu.classList.add("sticky");
+    }
   }
   if ((window.innerHeight + yPosition) >= document.body.offsetHeight) {
       // you're at the bottom of the page
@@ -133,7 +156,7 @@ function adjustNavTitle(yPosition){
           if(actualSection != section.CONTACT){   
             navTitle.innerHTML = "Contact"
             actualSection = section.CONTACT
-            transparent(false)
+            transparent()
           }
       break;
       //Services
@@ -141,21 +164,23 @@ function adjustNavTitle(yPosition){
           if(actualSection != section.SERVICES ){
             navTitle.innerHTML = "Services"
             actualSection = section.SERVICES
-            transparent(false)
+            transparent()
           }
       break;
       case (yPosition > approach.offsetTop + GetNavMenuHeight() && yPosition < services.offsetTop - titleFadeOffset):  
-          if(actualSection != section.APPROACH){
+         
+      if(actualSection != section.APPROACH){
             navTitle.innerHTML = "Mon Approche"
             actualSection = section.APPROACH
-            transparent(false)
+            
+            transparent()
           }
       break;
       case (yPosition > about.offsetTop + GetNavMenuHeight() && yPosition < approach.offsetTop - titleFadeOffset):  
           if(actualSection != section.ABOUT){
             navTitle.innerHTML = "À Propos de Moi"
             actualSection = section.ABOUT
-            transparent(false)
+            transparent()
           }
       break;
       default:
@@ -163,14 +188,14 @@ function adjustNavTitle(yPosition){
           // navTitle.innerHTML = ""
           
           actualSection = section.NONE
-          transparent(true)
+          transparent()
         }
         break;
     }
   }
 
-  function transparent(value){
-    if(value){
+  function transparent(){
+    if(actualSection == section.NONE){
       navTitle.classList.add('nav-title-transparent')
     }
     else{
