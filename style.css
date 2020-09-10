@@ -755,7 +755,12 @@ textarea{
         margin: auto;
         width: 90%;
         column-gap: 2%;
+        row-gap: 4%;
        
+    }
+    .form-title-div{
+        margin-bottom: 10%;
+        font-size: 1.3em;
     }
     .input-field{
     
@@ -773,6 +778,10 @@ textarea{
         transition: border-color 0.2s;
         margin: auto;
       }
+
+    #form{
+        margin-top: 10%;
+    }
     .mobile-shadow{
         -webkit-box-shadow: 0 8px 6px -6px #b9b9b9;
         -moz-box-shadow: 0 8px 6px -6px #b9b9b9;
