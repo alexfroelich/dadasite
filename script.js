@@ -1,35 +1,64 @@
-
+var section = {
+  ABOUT: 1,
+  APPROACH: 2,
+  SERVICES: 3,
+  CONTACT: 4,
+  NONE: 5
+}
 var isMobile = false;
 
 var stickyHeader = document.getElementById("sticky-header");
 var logo = document.getElementById("logo");
 
 var about = document.getElementById("about-title");
-var approach = document.getElementById("approach");
-var services = document.getElementById("services");
-var contact = document.getElementById("contact");
+var approach = document.getElementById("approach-title");
+var services = document.getElementById("services-title")
+var contact = document.getElementById("contact-title");
 var header = document.getElementById("sticky-header");
+
+var titleFadeOffset = 200;
+var actualSection = section.NONE;
+//Languages Available
+
+//var services = document.querySelector(".text-section-services")
+
 
 var headerHeight = header.getBoundingClientRect().height;
 var overlay = document.getElementsByClassName("overlay");
+
+//Mobile Nav
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('#nav-manager');
+const nav = document.querySelector('.nav-links');
+const navLinks = document.querySelectorAll('.nav-links div');
+var navTitle = document.querySelector(".nav-title");
+var navMenuHeight = navMenu.getBoundingClientRect().height;
 //var aboutRect = about.getBoundingClientRect();
+
+function GetNavMenuHeight(){
+  //return nav height + value for margin
+    return navMenu.getBoundingClientRect().height * 1.5;
+ 
+}
 function scrollToAbout() {
-  window.scrollTo(0, about.offsetTop - headerHeight);
+ 
+  window.scrollTo(0, about.offsetTop - GetNavMenuHeight());
+  
   dismiss();
 }
 
 function scrollToApproach(){
-  window.scrollTo(0, approach.offsetTop - headerHeight);
+  window.scrollTo(0, approach.offsetTop - GetNavMenuHeight());
   dismiss();
 }
 
 function scrollToServices(){
-  window.scrollTo(0, services.offsetTop - headerHeight);
+  window.scrollTo(0, services.offsetTop - GetNavMenuHeight());
   dismiss();
 }
 
 function scrollToContact(){
-  window.scrollTo(0, contact.offsetTop - headerHeight);
+  window.scrollTo(0, contact.offsetTop - GetNavMenuHeight());
   dismiss();
 }
 
@@ -51,10 +80,11 @@ function showNavElements(){
     //if it is already animated
     if(link.style.animation){
       link.style.animation = '';
+      transparent(false)
     }
     else{
      
-      
+      transparent(true)
       link.style.animation = `fadeIn 0.5s ease-in-out forwards ${index / 25 + 0.25}s`;
     }
   });
@@ -64,7 +94,7 @@ const navSlide = () => {
   burger.addEventListener('click', () => {
     //Toggle Nav
     toggleNavMenu()
-
+   
   });
 
   
@@ -72,24 +102,80 @@ const navSlide = () => {
 }
 
 //Main
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links div');
+
 navSlide();
 screenWidth = window.screen.width;
 window.onscroll = function(ev) {
   
-  const nav = document.querySelector('#nav-manager');
+  var yPosition = window.scrollY
+  adjustNavTitle(yPosition);
   if(screenWidth < 1000){
-    if(window.scrollY < 500)
-      nav.style.display = "none";
+    if(yPosition < 500)
+    navMenu.style.display = "none";
     else
-      nav.style.display = "block";
+    navMenu.style.display = "block";
   }
   else{
-    nav.style.display = "block";
+    navMenu.style.display = "block";
   }
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  if ((window.innerHeight + yPosition) >= document.body.offsetHeight) {
       // you're at the bottom of the page
   }
 };
+
+function adjustNavTitle(yPosition){
+    //Change Title according the position
+    
+    switch (true) {
+      
+      //Contact
+      case (yPosition > contact.offsetTop + GetNavMenuHeight()):
+          if(actualSection != section.CONTACT){   
+            navTitle.innerHTML = "Contact"
+            actualSection = section.CONTACT
+            transparent(false)
+          }
+      break;
+      //Services
+      case (yPosition > services.offsetTop + GetNavMenuHeight() && yPosition < contact.offsetTop - titleFadeOffset):  
+          if(actualSection != section.SERVICES ){
+            navTitle.innerHTML = "Services"
+            actualSection = section.SERVICES
+            transparent(false)
+          }
+      break;
+      case (yPosition > approach.offsetTop + GetNavMenuHeight() && yPosition < services.offsetTop - titleFadeOffset):  
+          if(actualSection != section.APPROACH){
+            navTitle.innerHTML = "Mon Approche"
+            actualSection = section.APPROACH
+            transparent(false)
+          }
+      break;
+      case (yPosition > about.offsetTop + GetNavMenuHeight() && yPosition < approach.offsetTop - titleFadeOffset):  
+          if(actualSection != section.ABOUT){
+            navTitle.innerHTML = "À Propos de Moi"
+            actualSection = section.ABOUT
+            transparent(false)
+          }
+      break;
+      default:
+        if(actualSection != section.NONE){
+          // navTitle.innerHTML = ""
+          
+          actualSection = section.NONE
+          transparent(true)
+        }
+        break;
+    }
+  }
+
+  function transparent(value){
+    if(value){
+      navTitle.classList.add('nav-title-transparent')
+    }
+    else{
+      navTitle.classList.remove('nav-title-transparent')
+    }
+
+  }
+

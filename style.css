@@ -43,7 +43,7 @@ nav{
     padding: 10px;
     min-height: 7vh;
     animation-name: fadeIn;
-        animation-duration: 1s;
+    animation-duration: 1s;
     
 }
 
@@ -52,9 +52,10 @@ nav{
 }
 .nav-title{
     display: none;
+
 }
 .burger div{
-    width: 25px;
+    width: 20px;
     height: 2px;
     background-color: black;
     margin: 5px;
@@ -813,9 +814,7 @@ nav{
   justify-content: space-between;
   align-items: center;
   height: 100%;
-    /* margin: auto;
-    display: grid;
-   grid-template-areas: "burger nav-title nav-title nav-title nav-title"; */
+   
 }
 .burger{
     display: block;
@@ -826,8 +825,16 @@ nav{
    grid-area: burger;
     width: 30px;
 }
+.burger::focus{
+    border-style: none;
+    outline: none;
+}
+.burger:hover{
+    outline: none;
+border-style: none;
+}
 .burger div{
-    width: 25px;
+    width: 20px;
     height: 2px;
     background-color: black;
     margin: 5px;
@@ -838,8 +845,17 @@ nav{
     flex-grow: 2;
    justify-content: center;
    text-anchor: middle;
-   margin-right: 25px;
+   margin-right: 20px;
    color: #01425e;
+   opacity: 1;
+   transition: 0.5s;
+}
+.nav-title-transparent{
+   
+    opacity: 0;
+    transition: 0.5s;
+    /* animation-name: fadeOut;
+    animation-duration: 5s; */
 }
 .nav-active{
     transform: translateY(0%);
@@ -908,13 +924,19 @@ hr{
 /*Animations*/
 @keyframes fadeIn{
     from{
-    opacity: 0;
-    
+        opacity: 0;
     }
     
     to{
-    opacity: 1;
-    
-    
+        opacity: 1;
     }
+}
+@keyframes fadeOut{
+    from{
+        opacity: 1;
     }
+    
+    to{
+        opacity: 0;
+    }
+}
