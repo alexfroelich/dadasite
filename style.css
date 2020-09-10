@@ -825,19 +825,14 @@ nav{
    grid-area: burger;
     width: 30px;
 }
-.burger::focus{
-    border-style: none;
-    outline: none;
-}
-.burger:hover{
-    outline: none;
-border-style: none;
-}
+
 .burger div{
-    width: 20px;
+    width: 25px;
     height: 2px;
     background-color: black;
     margin: 5px;
+    outline: none;
+    border-style: none;
 }
 
 .nav-title{
@@ -845,7 +840,7 @@ border-style: none;
     flex-grow: 2;
    justify-content: center;
    text-anchor: middle;
-   margin-right: 20px;
+   margin-right: 25px;
    color: #01425e;
    opacity: 1;
    transition: 0.5s;
