@@ -763,7 +763,7 @@ textarea{
         list-style-type: none;
         font-weight: 400;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         text-align: center;
         /* padding-bottom: 10px;
         padding-top: 10px; */
@@ -777,6 +777,7 @@ nav{
     display: none;
     top: 0px;
     z-index: 2;
+    
 }
 .nav-links{
     position: absolute;
@@ -802,13 +803,24 @@ nav{
 .nav-links div{
     opacity: 0;
 }
+.nav-mobile-grid{
+    display: flex;
+    
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+    /* margin: auto;
+    display: grid;
+   grid-template-areas: "burger nav-title nav-title nav-title nav-title"; */
+}
 .burger{
     display: block;
     cursor: pointer;
     outline: none;
     outline-color: transparent;
     z-index: 3;
-   
+   grid-area: burger;
     width: 30px;
 }
 .burger div{
@@ -817,11 +829,18 @@ nav{
     background-color: black;
     margin: 5px;
 }
-
+.nav-title{
+    flex-grow: 2;
+   justify-content: center;
+   text-anchor: middle;
+   margin-right: 25px;
+   color: #01425e;
+}
 .nav-active{
     transform: translateY(0%);
     width: 100%;
 }
+
 
 
 
@@ -841,7 +860,7 @@ nav{
 }
 .menu-item{
     /* border: 2px solid red; */
-   font-size: 1.2rem;
+   font-size: 1rem;
 }
  .nav-items-div{
     border-bottom: 0px solid #cad9df;
@@ -849,8 +868,8 @@ nav{
     margin: 0;
     margin-left: auto;
     margin-right: auto;
-    /* margin-top: 7%;
-    margin-bottom: 10%; */
+    margin-top: 5%;
+    
  }
  .nav-first-item{
     /* border-top: 1px solid #01425e; */
