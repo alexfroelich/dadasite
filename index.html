@@ -15,8 +15,7 @@
    
     <div id="container">
        
-      
-       
+     
         <div id="logo" class="mobile-shadowz">
             
             <img id="logo-img" src="./assets/logo.png" alt="alessandra_froelich">
@@ -24,19 +23,46 @@
           
             <br class="desktop-only"><br class="desktop-only">
         </div>
+
+      
+       
+
      <!--New Nav-->
         
-     <nav id="nav-manager">
+     <nav id="nav-manager" class="mobile-shadow">
         <div class="empty-space desktop-only"></div>
         <hr class="nav-line desktop-only">
         <div class="logoNav" id="sticky-header">
             <img id="nav-logo-img" src="./assets/logo.png" alt="alessandra_froelich">
         </div>
         <ul id="header-menu" class="nav-links">
-            <a onclick="scrollToAbout()"> <li class="menu-item" id="menu-about"> À propos de moi</li></a>
-            <a onclick="scrollToApproach()"> <li class="menu-item" id="menu-approach">Mon approche</li></a>
-            <a onclick="scrollToServices()"><li class="menu-item" id="menu-services">Services</li></a>
-            <a onclick="scrollToContact()"><li class="menu-item" id="menu-contact">Contact</li></a>
+            <div class="nav-items-div nav-first-item">
+                <a onclick="scrollToAbout()"> <li class="menu-item" id="menu-about"> À propos de moi</li></a>
+            </div>
+            <div class="nav-items-div">
+                <hr class="item-line mobile-only">
+            </div>
+            <div class="nav-items-div">
+                <a onclick="scrollToApproach()"> <li class="menu-item" id="menu-approach">Mon approche</li></a>
+            </div>
+            <div class="nav-items-div">
+                <hr class="item-line mobile-only">
+            </div>
+            <div class="nav-items-div">
+                <a onclick="scrollToServices()"><li class="menu-item" id="menu-services">Services</li></a>
+            </div>
+            <div class="nav-items-div">
+                <hr class="item-line mobile-only">
+            </div>
+            <div class="nav-items-div">
+                <a onclick="scrollToContact()"><li class="menu-item" id="menu-contact">Contact</li></a>
+            </div>
+            <div class="nav-items-div">
+                <hr class="item-line mobile-only">
+            </div>
+            <div class="nav-items-div mobile-only div-logo-nav-mobile">
+                <img id="nav-logo-img-mobile" src="./assets/logo.png" alt="alessandra_froelich">
+            </div>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -49,7 +75,7 @@
      <img class="photo presentation-photo" src="./assets/ale1.jpg" alt="alessandra">
     <!-- main content, all the sections are listed here-->
     <main id="content" class="grid-content">
-       
+         
         <!-- À propos de moi-->
         <section class="card" id="about" >
             <div class="image-section">
@@ -152,46 +178,93 @@
                     Vous pouvez ainsi participer à la séance à l’endroit de votre choix, à l’aide d’une plateforme sécurisée.</p>
             </div>
             <div class="image-section-services2 mobile-only">
-                <img class="photo-services2" src="./assets/ale10.jpg" alt="alessandra">
+                <img class="photo-services2" src="./assets/ale11.jpg" alt="alessandra">
             </div>
         </section>
         
         <!-- Contact -->
         <section id="contact" class="card-contact">
-            <div class="text-section-contact">
-                <h1 class="translate title">Contact</h1>
+            <div class="contact-title-area">
+                <h1 class="translate title" id="contact-title">Contact</h1>
                 <hr class="mobile-only">
+            </div>
+            <div class="text-section-contact">
+                
+              
                 <div class="contact-content">
-                    <p>(819) 571-9988</p>
-                    <p>psyalessandra@gmail.com</p>
-                    <p>4170 rue Bonaventure - Sherbrooke, Québec</p>
-                    <p>J1L  1Y6</p>
-                    
-                      
+                    <div class="contact-text">
+                        <div class="phone">
+                            <h3 class="contact-item-title">Telephone</h3>
+                            <p class="contact-item-content">(819) 571-9988</p>
+                        </div>
+                        <div class="email">
+                            <h3 class="contact-item-title">Email</h3>
+                            <p class="contact-item-content">psyalessandra@gmail.com</p>
+                        </div>
+                        <div class="address">
+                            <h3 class="contact-item-title">Adresse</h3>
+                            <p class="contact-item-content">4170 rue Bonaventure - Sherbrooke, Québec J1L  1Y6</p>
+                            
+                        </div>
+                    </div>
                 </div>
+                   
+               
             </div>
-             <!-- Map -->
-            <div id="map" class="map-section">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.1072638615897!2d-71.96468832650385!3d45.38700702024337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7b4b437637523%3A0xd79cd6d52ee16f06!2s4170%20Rue%20Bonaventure%2C%20Sherbrooke%2C%20QC%20J1L%201Y6%2C%20Canada!5e0!3m2!1sen!2sbr!4v1587653554571!5m2!1sen!2sbr"
-                 width="100%" height="350" frameborder="0" style="border:0;" 
-                 allowfullscreen="" aria-hidden="false" tabindex="0">
-                </iframe>
-            </div>
+                <!-- Map -->
+                <div id="map" class="map-section">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.1072638615897!2d-71.96468832650385!3d45.38700702024337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb7b4b437637523%3A0xd79cd6d52ee16f06!2s4170%20Rue%20Bonaventure%2C%20Sherbrooke%2C%20QC%20J1L%201Y6%2C%20Canada!5e0!3m2!1sen!2sbr!4v1587653554571!5m2!1sen!2sbr"
+                    width="80%" height="300" frameborder="0" style="border:0;" 
+                    allowfullscreen="" aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
+            <section id="form" class="form-area">
+                <!-- <form class="contact-form" name="contactForm" onsubmit="return validateForm()" action="contactform.php" method="post" autocomplete="off" autocomplete="off">
+                    -->
+                        <div class="form-title-div">
+                        <h3 class="contact-form-title">Envoyer un message</h3>
+                        </div>
+                   
+                        <form name="contactForm" class="contact-form" onsubmit="return validateForm()" method="post" autocomplete="off" autocomplete="off">
+                            <!-- Input - Name -->
+                            <div class="main-div form-area-name half-size-form">
+                                <input type="input" class="input-field" placeholder="Name" name="input-name" id='input-name' required />
+                                <label for="input-name" class="label-name">Name</label>
+                            </div>
+                            <!-- Input - Email -->
+                            <div class="main-div form-area-email half-size-form">
+                                <input type="input" class="input-field" placeholder="Email" name="input-email" id='input-email' required />
+                                <label for="input-email" class="label-name">Email</label>
+                            </div>
+                            <!-- Input - Subject -->
+                            <div class="main-div form-area-subject">
+                                <input type="input" class="input-field" placeholder="Name" name="input-subject" id='input-subject' required />
+                                <label for="input-subject" class="label-name">Subject</label>
+                            </div>
+                            
+                          <!--
+                
+                        <input id="input-name" type="text" name="name" placeholder="Name" aria-autocomplete="none" autocomplete="off" >
+                        <input id="input-email" type="email" name="email" placeholder="E-mail" aria-autocomplete="none" autocomplete="off" >
+                        <input id="input-subject" type="text" name="subject" placeholder="Subject" >
+                       -->
+
+                       
+                            <textarea class="form-area-message" id="text-area" name="message" placeholder="Write Your Message" id="msg-area" cols="30" rows="10" ></textarea>
+                            <button class="form-area-button" id="submit-button" type="submit" name="submit">SEND MESSAGE</button>
+                       
+                       
+                        </form>
+                  
+            </section>
+
+               
         </section>
        
-      
-            <section id="form">
-            <!-- <form class="contact-form" name="contactForm" onsubmit="return validateForm()" action="contactform.php" method="post" autocomplete="off" autocomplete="off">
-                -->
-                <form name="contactForm" class="contact-form" onsubmit="return validateForm()" method="post" autocomplete="off" autocomplete="off">
-                    
-                    <input id="input-name" type="text" name="name" placeholder="Name" aria-autocomplete="none" autocomplete="off" >
-                    <input id="input-email" type="email" name="email" placeholder="E-mail" aria-autocomplete="none" autocomplete="off" >
-                    <input id="input-subject" type="text" name="subject" placeholder="Subject" >
-                    <textarea id="text-area" name="message" placeholder="Write Your Message" id="msg-area" cols="30" rows="10" ></textarea>
-                    <button id="submit-button" type="submit" name="submit">SEND MESSAGE</button>
-                </form>
-            </section>
+        <footer>
+            <h1></h1>    
+        </footer>
+           
 
        
                   

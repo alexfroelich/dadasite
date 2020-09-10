@@ -33,29 +33,37 @@ function scrollToContact(){
   dismiss();
 }
 
+function dismiss(){
+  toggleNavMenu();
+}
+
+function toggleNavMenu(){
+  //Toggle Nav
+  nav.classList.toggle('nav-active');
+
+  //Animate Links
+  showNavElements();
+}
+
+function showNavElements(){
+  navLinks.forEach((link, index)=>{
+      
+    //if it is already animated
+    if(link.style.animation){
+      link.style.animation = '';
+    }
+    else{
+     
+      
+      link.style.animation = `fadeIn 0.5s ease-in-out forwards ${index / 25 + 0.25}s`;
+    }
+  });
+}
 const navSlide = () => {
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li');
-console.log(navLinks)
   
   burger.addEventListener('click', () => {
     //Toggle Nav
-    nav.classList.toggle('nav-active');
-
-    //Animate Links
-    navLinks.forEach((link, index)=>{
-      
-      //if it is already animated
-      if(link.style.animation){
-        link.style.animation = '';
-      }
-      else{
-       
-        
-        link.style.animation = `fadeIn 0.5s ease forwards ${index / 5 + 0.5}s`;
-      }
-    });
+    toggleNavMenu()
 
   });
 
@@ -63,7 +71,10 @@ console.log(navLinks)
 
 }
 
-
+//Main
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
+const navLinks = document.querySelectorAll('.nav-links div');
 navSlide();
 screenWidth = window.screen.width;
 window.onscroll = function(ev) {
