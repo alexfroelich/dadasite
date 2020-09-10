@@ -41,7 +41,7 @@ nav{
       top:0;
     /* margin-bottom: 5%; */
     /* top: -1px; */
-   
+    z-index: 5;
     padding: 10px;
     min-height: 7vh;
     animation-name: fadeIn;
