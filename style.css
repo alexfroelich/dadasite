@@ -13,7 +13,9 @@ body{
     margin: 0;
     padding: 0; 
 }
-
+.hide-element{
+    display: none;
+}
 .logoNav{
    float: right;
    width: 50%;
@@ -142,9 +144,10 @@ a{
     font-family: 'Libre Baskerville';
     font-weight: 700;
     font-size: 3rem;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
     color: #7cc0dd;
 }
+
 #approach-quote{
     font-family: 'Libre Baskerville';
    font-style: italic;
@@ -194,6 +197,7 @@ a{
 .card-services{
     display: grid;  
     grid-template-areas:
+    "image-section-services image-section-services  text-section-services text-section-services "
     "image-section-services image-section-services  text-section-services text-section-services ";
     
     column-gap: 10%; 
@@ -217,8 +221,15 @@ a{
     height: auto;
     margin-top: 5%;
    
+  
     /* animation-name: fadeIn;
     animation-duration: 4s; */
+  }
+  .nav-container{
+    /* height: 50vh;
+    margin-top: 20vh;
+    margin-bottom: 25vh;
+    padding: 0%; */
   }
 #approach{
     
