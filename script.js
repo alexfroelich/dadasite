@@ -5,6 +5,8 @@ var section = {
   CONTACT: 4,
   NONE: 5
 }
+
+var mobileWidth = 1200;
 var isMobile = false;
 
 var stickyHeader = document.getElementById("sticky-header");
@@ -43,6 +45,7 @@ const navLinks = document.querySelectorAll('.nav-links div');
 var navTitle = document.querySelector(".nav-title");
 var navMenuHeight = navMenu.getBoundingClientRect().height;
 //var aboutRect = about.getBoundingClientRect();
+screenWidth = window.screen.width;
 
 function GetNavMenuHeight(){
   //return nav height + value for margin
@@ -72,7 +75,8 @@ function scrollToContact(){
 }
 
 function dismiss(){
-  toggleNavMenu();
+  if(screenWidth <= mobileWidth)
+    toggleNavMenu();
 }
 
 function toggleNavMenu(){
@@ -115,12 +119,18 @@ const navSlide = () => {
 //Main
 
 navSlide();
-screenWidth = window.screen.width;
+var navY = navEmptySpace.offsetTop
+console.log("Nav Pos: " + navY);
+
 window.onscroll = function(ev) {
   
   var yPosition = window.scrollY
-  adjustNavTitle(yPosition);
-  if(screenWidth < 1000){
+ console.log("Y scroll: " + yPosition);
+ 
+
+  if(screenWidth <= mobileWidth){
+    adjustNavTitle(yPosition);
+
     if(yPosition < about.offsetTop + GetNavMenuHeight())
     navMenu.style.display = "none";
     else
@@ -130,14 +140,15 @@ window.onscroll = function(ev) {
     navMenu.style.display = "block";
     //console.log("Nav" + navEmptySpace.offsetTop)
    
-    if(yPosition >= navEmptySpace.offsetTop + window.screen.height ){
+    if(yPosition >= navY ){
        navMenu.classList.add("shadow");
+       navMenu.classList.add("fixed");
       // navMenu.classList.add("fixed");
       // navMenu.classList.remove("sticky");
     }
     else{
        navMenu.classList.remove("shadow");
-      // navMenu.classList.remove("fixed");
+       navMenu.classList.remove("fixed");
       // navMenu.classList.add("sticky");
     }
   }

@@ -4,12 +4,15 @@
     scroll-behavior: smooth;
    
 }
-
+.container{
+    margin: 0;
+}
 body{
    
     font-family: 'Open Sans';
     color: #333333;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 1.25vw;
     margin: 0;
     padding: 0; 
 }
@@ -33,28 +36,41 @@ body{
     height: 1vh;
    
 }
-
+.full-header-div {
+  height: 100vh;
+  display: flex;
+  /* establish flex container */
+  flex-direction: column;
+  /* make main-axis vertical */
+  justify-content: center;
+  /* align items vertically, in this case */
+  align-items: center;
+ 
+}
+/*ale11*/
 
 nav{
    
     text-align: center;
     /* position:-webkit-sticky; */
-     position:sticky;
+     /* position:sticky; */
       top:0;
     /* margin-bottom: 5%; */
     /* top: -1px; */
     z-index: 5;
     padding: 10px;
-    min-height: 7vh;
+    /* min-height: 7vh; */
+    min-height: 50px;
     animation-name: fadeIn;
     animation-duration: 1s;
+    transition: 0.5s;
     width: 100%;
 }
 .fixed{
     padding: 10px;
     top: 0px;
     position: fixed;
-    transition: 1s;
+    transition: 0.5s;
 }
 .sticky{
     padding: 10px;
@@ -143,7 +159,8 @@ a{
 .title{
     font-family: 'Libre Baskerville';
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3vw;
+    /* font-size: 3rem; */
     /* margin-bottom: 10%; */
     color: #7cc0dd;
 }
@@ -342,6 +359,11 @@ iframe{
     margin-top: 0;
   
   
+}
+
+.presentation-photo{
+   
+    margin-top: 10%;
 }
 footer{
     align-items: center ;
@@ -559,7 +581,7 @@ textarea{
    .presentation-photo{
        display: none;
    }
-
+   
    /*Cards*/
     .card{
   
@@ -653,6 +675,15 @@ textarea{
     
     color: #7cc0dd;
    }
+   .title{
+    font-family: 'Libre Baskerville';
+    font-weight: 700;
+   
+    font-size: 3rem;
+    /* font-size: 3rem; */
+    /* margin-bottom: 10%; */
+    color: #7cc0dd;
+}
    #approach-quote{
     margin: 10%;
     font-size: 1.75em;
@@ -962,12 +993,33 @@ nav{
      margin-left: auto;
      margin-right: auto;
  }
+
+ @media (orientation: landscape) {
+    #nav-logo-img-mobile{
+        width: 85vh;
+        height: auto;
+    }
+    .nav-first-item{
+        /* border-top: 1px solid #01425e; */
+        padding-top: 0%;
+     }
+    .nav-items-div{
+        border-bottom: 0px solid #cad9df;
+        width: 75%;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+       
+     }
+  }
   body{
     font-size: 15px;
     margin: 0%;
     padding: 0;
     }
     img{margin: 0% !important; }
+
+   
 }
 hr{
 
@@ -993,3 +1045,6 @@ hr{
         opacity: 0;
     }
 }
+
+
+ 
