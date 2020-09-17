@@ -633,11 +633,13 @@ textarea{
         grid-area: text-section;
         margin: 10%;
         margin-top: 0;
-        margin-bottom: 0;
+        
         justify-content: center;
         text-justify: distribute;
      }
-    
+     .mobile-spacing{
+         margin-bottom: 0;
+     }
     .about-photo{
         max-width: 100vw;
         height: auto;
