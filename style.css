@@ -13,6 +13,7 @@ body{
     color: #333333;
     /* font-size: 18px; */
     font-size: 1.25vw;
+    
     margin: 0;
     padding: 0; 
 }
@@ -218,7 +219,7 @@ a{
     "image-section-services image-section-services  text-section-services text-section-services ";
     
     column-gap: 10%; 
-   
+    
     margin-top: 10%;
 }
 
@@ -242,6 +243,30 @@ a{
     /* animation-name: fadeIn;
     animation-duration: 4s; */
   }
+
+  .card-office{
+    display: grid;  
+    grid-template-areas:
+    "text-section-office text-section-office image-office image-office"
+    "text-section-office text-section-office  image-office image-office  ";
+    
+    column-gap: 10%; 
+    padding-left: 10%;
+    margin-top: 10%;
+}
+
+.image-section-office{
+    grid-area: image-office;
+   
+    margin: auto;
+    justify-content: center;
+ }
+ .text-section-office{
+    grid-area: text-section-office;
+    
+    text-justify: distribute;
+ }
+ 
   .nav-container{
     /* height: 50vh;
     margin-top: 20vh;
@@ -280,7 +305,9 @@ a{
     align-items: flex-start;
     font-weight: 600;
     color: #01425e;
+    margin-bottom: 3%;
 }
+
 
 .card-contact{
   
@@ -362,8 +389,9 @@ iframe{
 }
 
 .presentation-photo{
-   
+   right: 0;
     margin-top: 10%;
+    width: 40%;
 }
 footer{
     align-items: center ;
@@ -378,7 +406,7 @@ footer{
 }
 #contact-title{
     padding-left: 10%;
-    margin-bottom: 5%;
+    
 }
 #form{
     width: 90%;
@@ -474,6 +502,7 @@ textarea{
   .half-size-form{
     padding-left: 5%;
   }
+ 
   .input-field{
     height: 50px;
     width: 90%;
@@ -574,7 +603,7 @@ textarea{
 */
 
 /*AIzaSyDVWie-n4Re1TupZ2y-tOjMrGw1K99aINQ*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
    body{
     overflow-x: hidden;
    }
@@ -690,7 +719,27 @@ textarea{
     margin-bottom: 0;
    }
   
+   .card-office{
+    display: grid;  
+    grid-template-areas:
+    "text-section-office"
+    "image-office ";
     
+    column-gap: 0%; 
+    padding-left: 0%; 
+    margin-top: 0%;
+    
+}
+.image-section-office {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0%;
+   
+   
+  }
+  .text-section-office{
+    margin: 10%;
+  }
     #logo-img{
         width: 100%;
         height: auto;
@@ -729,11 +778,15 @@ textarea{
         column-gap: 0%; 
         margin-top: 0%;
     }
+    #contact-title{
+        padding-left: 10%;
+        margin-bottom: 10%;
+    }
     .text-section-contact{
         margin: 10%;
         padding-left: 0%;
         grid-area: text-section-contact;
-      
+        
     }
  
     /* .contact-content{
@@ -759,6 +812,7 @@ textarea{
     }
     .text-section-contact{
         margin: 10%;
+        margin-top: 2%;
     }
     .contact-text{
         margin: 0%;
@@ -824,6 +878,9 @@ textarea{
     #form{
         margin-top: 10%;
     }
+    .half-size-form{
+        padding-left: 2%;
+      }
     .mobile-shadow{
         -webkit-box-shadow: 0 8px 6px -6px #b9b9b9;
         -moz-box-shadow: 0 8px 6px -6px #b9b9b9;
@@ -855,7 +912,7 @@ nav{
     width: 100%;
     height: 2%;
     position: fixed;
-    display: none;
+    /* display: none; */
     top: 0px;
     z-index: 2;
     
@@ -1024,6 +1081,7 @@ nav{
 hr{
 
     margin: auto;
+  
     width: 80vw;
 }
 /*Animations*/

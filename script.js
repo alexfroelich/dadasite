@@ -28,7 +28,7 @@ var contact = document.getElementById("contact-title");
 var header = document.getElementById("sticky-header");
 var navEmptySpace = document.querySelector(".empty-space")
 var titleFadeOffset = 200;
-var actualSection = section.NONE;
+var actualSection;
 //Languages Available
 
 //var services = document.querySelector(".text-section-services")
@@ -120,7 +120,7 @@ const navSlide = () => {
 
 navSlide();
 var navY = navEmptySpace.offsetTop
-console.log("Nav Pos: " + navY);
+
 
 window.onscroll = function(ev) {
   
@@ -131,10 +131,10 @@ window.onscroll = function(ev) {
   if(screenWidth <= mobileWidth){
     adjustNavTitle(yPosition);
 
-    if(yPosition < about.offsetTop + GetNavMenuHeight())
-    navMenu.style.display = "none";
-    else
-    navMenu.style.display = "block";
+    // if(yPosition < about.offsetTop + GetNavMenuHeight())
+    // navMenu.style.display = "block";
+    // else
+    // navMenu.style.display = "block";
   }
   else{
     navMenu.style.display = "block";
@@ -196,7 +196,7 @@ function adjustNavTitle(yPosition){
       break;
       default:
         if(actualSection != section.NONE){
-          // navTitle.innerHTML = ""
+          //  navTitle.innerHTML = ""
           
           actualSection = section.NONE
           transparent()
