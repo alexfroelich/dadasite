@@ -632,7 +632,8 @@ textarea{
      .text-section{
         grid-area: text-section;
         margin: 10%;
-        
+        margin-top: 0;
+        margin-bottom: 0;
         justify-content: center;
         text-justify: distribute;
      }
@@ -665,7 +666,7 @@ textarea{
         grid-area: text-section-services;
         margin: 10%;
         text-justify: distribute;
-       
+       margin-top: 0;
      }
   
      .photo-services {
@@ -881,7 +882,7 @@ textarea{
 
     #form{
         margin-top: 10%;
-        margin-bottom: 15%;
+        margin-bottom: 20%;
     }
     .half-size-form{
         padding-left: 2%;

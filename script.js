@@ -49,7 +49,7 @@ screenWidth = window.screen.width;
 
 function GetNavMenuHeight(){
   //return nav height + value for margin
-    return navMenu.getBoundingClientRect().height * 1.5;
+    return navMenu.getBoundingClientRect().height * 1.25;
  
 }
 function scrollToAbout() {
