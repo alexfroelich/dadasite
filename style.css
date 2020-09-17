@@ -442,6 +442,7 @@ footer{
     column-gap: 2%;
     row-gap: 7%;
     margin-top: 10%;
+    
 }
 .form-area-name{
     grid-area: form-name;
@@ -457,6 +458,7 @@ footer{
 }
 .form-area-button{
     grid-area: form-button;
+    
 }
 /* input{
     box-sizing: border-box;
@@ -777,6 +779,7 @@ textarea{
         "form-area";
         column-gap: 0%; 
         margin-top: 0%;
+        margin-bottom: 10%;
     }
     #contact-title{
         padding-left: 10%;
@@ -848,11 +851,12 @@ textarea{
         "form-subject"
         "form-message"
         "form-button";
-        margin: auto;
+       
         width: 90%;
         column-gap: 2%;
         row-gap: 4%;
-       
+        margin: auto;
+      
     }
     .form-title-div{
         margin-bottom: 10%;
@@ -877,6 +881,7 @@ textarea{
 
     #form{
         margin-top: 10%;
+        margin-bottom: 15%;
     }
     .half-size-form{
         padding-left: 2%;
@@ -1078,11 +1083,20 @@ nav{
 
    
 }
+.footer-div{
+    height: 20%;
+    width: 100%;
+   
+}
 hr{
 
     margin: auto;
   
     width: 80vw;
+}
+.footer-section{
+    background-color: red;
+    height: 10%;
 }
 /*Animations*/
 @keyframes fadeIn{
