@@ -305,7 +305,7 @@ a{
     align-items: flex-start;
     font-weight: 600;
     color: #01425e;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
 }
 
 
@@ -612,6 +612,10 @@ textarea{
    .presentation-photo{
        display: none;
    }
+   .list-items{
+   
+    margin-bottom: 2%;
+}
    
    /*Cards*/
     .card{
